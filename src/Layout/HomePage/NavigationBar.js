@@ -102,7 +102,7 @@ const NavigationBar = () => {
 
   return (
     <>
-      <Box sx={{ border: "1px solid tomato" }}>
+      <Box>
         <Grid container className="homePage-Top" >
           <Grid item xs={12} className="homePage-Top__navigation">
             <Grid>

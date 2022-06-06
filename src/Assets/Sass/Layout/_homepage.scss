@@ -1,12 +1,88 @@
-.header {
-    border: 1px solid rgb(151, 21, 177);
-    height: 40px;
-    color: aqua;
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #f6f7fb;
+  border-radius: 64px;
+  margin-top: 95px;
+  position: relative;
+  justify-content: flex-end;
 }
-.header-container{
-    border: 1px solid rgb(233, 114, 23);
-    height: 40px;
-    color: rgb(38, 250, 250);
-    width: 750px;
-    height: 550px;
+.header-container .skincare-products {
+  position: absolute;
+  top: 15%;
+  left: 0px;
+}
+.header-container .skincare-products p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+  color: #1a202c;
+  margin-bottom: 40px;
+}
+
+.header-container .skincare-products__text {
+  width: 496px;
+  height: 112px;
+}
+//------------------------------------------------
+.categories {
+  // border: 1px tomato solid;
+
+  &__title {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 56px;
+    color: #1a202c;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .categories__item {
+      background: #f6f7fb;
+      border-radius: 24px;
+      width: 128px;
+      height: 128px;
+      cursor: pointer;
+
+      // border: 1px rgb(34, 142, 95) solid;
+    }
+  }
+}
+
+//------------------------------------------------
+.products {
+  border: 1px rgb(34, 142, 95) solid;
+  
+
+  &__title {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 56px;
+    color: #1a202c;
+  }
+  &__container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
+  }
+  &__item {
+    background: #f6f7fb;
+    border-radius: 48px;
+    width: 276px;
+    height: 276px;
+    border: 1px rgb(158, 194, 27) solid;
+  }
 }

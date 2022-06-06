@@ -7,6 +7,8 @@
 import React, { Component } from 'react';
 import NavigationBar from './NavigationBar';
 import Header from './Header';
+import Categories from './categories';
+import Products from './products';
 
 class HomPageComponent extends Component{
     render() {
@@ -15,6 +17,8 @@ class HomPageComponent extends Component{
           <>
             <NavigationBar/>
             <Header></Header>
+            <Categories></Categories>
+            <Products></Products>
           </>
         );
       }

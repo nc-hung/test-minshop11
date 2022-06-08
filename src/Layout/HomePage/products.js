@@ -25,7 +25,7 @@ const Products = () => {
                 <div className="products__container">
                     <div className="products__item">
                     <div className="products__item__img">
-                        <img></img>
+                        <img src = "" alt = ""></img>
                     </div>
                     <div className="products__item__detail">
                         <p>Teen SP</p>

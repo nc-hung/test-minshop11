@@ -17,9 +17,9 @@ class HomPageComponent extends Component {
     // console.log("eeeeeee", this.props.dataRedux);
     return (
       <>
-        <NavigationBar />
+        {/* <NavigationBar />
         <Header></Header>
-        <Categories></Categories>
+        <Categories></Categories> */}
         <Products></Products>
       </>
     );

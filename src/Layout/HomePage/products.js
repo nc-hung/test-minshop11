@@ -1,66 +1,67 @@
 import {
-    // Grid,
-    // styled,
-    // alpha,
-    // AppBar,
-    // Toolbar,
-    // Typography,
-    // InputBase,
-    // Badge,
-    // MenuItem,
-    // Menu,
-    IconButton,
-    Box,
+  IconButton,
+  Box,
 } from "@mui/material";
 import * as React from "react";
 import "../../Assets/Sass/Layout/_homepage.scss"
+import { connect } from "react-redux";
+import { styled } from '@mui/material/styles';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+// import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import { CardMedia } from "@mui/material";
 
-const Products = () => {
-    return (
-        <>
-            <Box component={"div"} className='products' >
-                <div className="products__title">
-                    <p>Explore our Products</p>
-                </div>
-                <div className="products__container">
-                    <div className="products__item">
-                    <div className="products__item__img">
-                        <img src = "" alt = ""></img>
-                    </div>
-                    <div className="products__item__detail">
-                        <p>Teen SP</p>
-                        <p>tag color</p>
-                        <p>Price</p>
-                    </div>
+const Products = (props) => {
+  const list = props.kakaData;
+  console.log("test_______", list);
+  return (
+    <>
+      <Box component={"div"} className='products' >
+        <div className="products__title">
+          <p>Explore our Products</p>
+        </div>
+        <div className="products__container">
+          <div className="products__item">
+            <div className="products__item__img">
+            </div>
+            <div className="products__item__detail">
+              {list && list.length > 0 && list.map((item, index) => {
+                return (
+                  <>
+                    <CardContent>
+                      <CardMedia
+                        component="img"
+                        image={item.img}
+                        alt={item.name}
+                        sx={{ borderRadius: 10 }}
+                      />
+                      {item.name}
+                      <Typography variant="body2" color="text.secondary" sx={{ marginTop:2, overflow: "auto", maxHeight: 150 }}>
+                        Loại: {item.category}
+                      Mô tả: {item.desc}
+                      </Typography>
+                    </CardContent>
+                  </>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </Box>
+    </>
 
-                    </div>
-                    <div className="products__item">
-                        aaaaaaaaaaa
-                    </div>
-                    <div className="products__item">
-                        aaaaaaaaaaa
-                    </div>
-                    <div className="products__item">
-                        aaaaaaaaaaa
-                    </div>
-                    <div className="products__item">
-                        aaaaaaaaaaa
-                    </div>
-                    <div className="products__item">
-                        aaaaaaaaaaa
-                    </div>
-                    <div className="products__item">
-                        aaaaaaaaaaa
-                    </div>
-                    <div className="products__item">
-                        aaaaaaaaaaa
-                    </div>
-                </div>
-            </Box>
-        </>
-    )
+  )
 }
-
-
-
-export default Products
+const mapStateToProps = (state) => {
+  return {
+    kakaData: state.products
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return (
+    <>hello{ }</>
+  )
+}
+export default connect(mapStateToProps)(Products);

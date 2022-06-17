@@ -13,11 +13,13 @@ import {
     Box,
 } from "@mui/material";
 import * as React from "react";
+import { connect } from "react-redux";
 // import Style from "../../Assets/Sass/Layout/_homepage.scss"
 import skincareproduct from "../../Assets/Image/HomePage/Image.svg"
 import "../../Assets/Sass/Layout/_homepage.scss"
 
-const Header = () => {
+const Header = (props) => {
+    console.log("test xem sao ", props);
     return (
         <>
             <Box component={"div"} className='header-container' >
@@ -38,7 +40,11 @@ const Header = () => {
         </>
     )
 }
+const mapStateToProps = (state) => {
+   return {
+    dataTest: state.products
+   } 
+}
 
 
-
-export default Header
+export default connect(mapStateToProps)(Header)
